@@ -1,0 +1,299 @@
+/* =========================
+   BASE
+========================= */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =========================
+   NAV (minimal + fixed)
+========================= */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(234, 239, 243, 0.8);
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  justify-content: space-between; /* THIS is key */
+  align-items: center;
+
+  padding: 20px 60px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d0d9e2;
+
+  z-index: 1000;
+}
+nav h1 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #8391a3;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #8391a3;
+}
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+.page {
+  padding-top: 120px;
+}
+
+/* =========================
+   HERO (clean + full bleed)
+========================= */
+.hero-image {
+  width: 100%;
+  height: 65vh; /* slightly smaller like reference site */
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+/* =========================
+   HOME GRID (minimal editorial)
+========================= */
+.home-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding: 60px;
+}
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.home-gallery img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* caption under images */
+.caption {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #8391a3;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   PHOTO PAGE GRID (2 columns)
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  padding: 60px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02);
+  opacity: 0.92;
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+.about-container {
+  display: flex;
+  gap: 80px;
+  padding: 120px 80px;
+  align-items: center;
+}
+
+.about-container img {
+  width: 360px;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-text {
+  max-width: 500px;
+  font-size: 18px;
+}
+
+.about-text h2 {
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #8391a3;
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+.contact-container {
+  max-width: 600px;
+  margin: 140px auto;
+  text-align: center;
+}
+
+.contact-container p {
+  color: #8391a3;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+input,
+textarea {
+  padding: 14px;
+  border: none;
+  border-bottom: 1px solid #c0bfcf;
+  background: transparent;
+  outline: none;
+}
+
+button {
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  background: #c9dfe5;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #d0d9e2;
+}
+
+/* =========================
+   LIGHTBOX (clean modern)
+========================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox img {
+  max-width: 85%;
+  max-height: 85%;
+}
+/* =========================
+   COLOR SYSTEM (LUXURY EDITORIAL)
+========================= */
+:root {
+  --bg: #f6f3ef; /* soft warm white */
+  --nav: #eaeff3; /* very light blue-gray */
+  --text: #111111; /* deep black */
+  --muted: #7e8a97; /* soft blue-gray text */
+  --accent: #c9dfe5; /* pale blue accent */
+  --accent-2: #c0bfcf; /* soft lavender-gray */
+  --line: #d0d9e2; /* subtle borders */
+}
+.logo {
+  font-family: "Brush Script MT", cursive;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 1px;
+}
+.contact-info {
+  margin-top: 30px;
+}
+
+.contact-info p {
+  font-size: 14px;
+  color: #8391a3;
+}
+
+.contact-info a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #c0bfcf;
+  transition: 0.3s;
+}
+
+.contact-info a:hover {
+  color: #8391a3;
+  border-bottom: 1px solid #8391a3;
+}
+.text-box {
+  margin-top: 40px;
+  text-align: center; /* centers everything */
+}
+
+/* TITLE (centered) */
+.text-box h3 {
+  font-size: 20px;
+  margin: 5px 0;
+  font-weight: 500;
+  color: #111;
+}
+
+/* DESCRIPTION (full width, left-aligned) */
+.text-box p {
+  font-size: 17px;
+  color: #8391a3;
+  line-height: 1.6;
+
+  text-align: left; /* left → right reading */
+  max-width: none; /* remove limit */
+  margin: 0; /* remove centering */
+}
+.page {
+  padding-bottom: 180px; /* gives scroll room without breaking layout */
+}
+html {
+  scroll-behavior: smooth;
+}

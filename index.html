@@ -1,9 +1,91 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Eve VanMeter</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+
+  <body>
+    <!-- NAV -->
+    <nav>
+      <h1 class="logo">Eve VanMeter</h1>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="photos.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="page">
+      <!-- HERO -->
+      <section class="hero-image">
+        <img src="images/image.png" alt="Hero Image" />
+      </section>
+
+      <!-- HOME GALLERY -->
+      <section class="home-gallery">
+        <div class="gallery-item">
+          <img src="images/IMG_4433 (1).JPG" alt="Engagement 1" />
+
+          <div class="text-box">
+            <h3>Engagement Shoot</h3>
+            <p>
+              I photographed my sister and her fiancé’s engagement session at my
+              grandparents’ farm, a location that holds deep personal meaning.
+              The rural setting, open fields, wildflowers, and natural lighting
+              created a warm and intimate atmosphere.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/IMG_4434.JPG" alt="Engagement 2" />
+
+          <div class="text-box">
+            <h3>Natural Moments</h3>
+            <p>
+              Capturing candid, in-between moments to reflect their genuine
+              connection and comfort in a place that feels like home.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/IMG_4444.JPG" alt="Engagement 3" />
+
+          <div class="text-box">
+            <h3>Golden Fields</h3>
+            <p>
+              Soft golden-hour lighting emphasized warmth, movement, and emotion
+              across the landscape.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <img id="lightbox-img" />
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      document.querySelectorAll(".home-gallery img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = img.src;
+        });
+      });
+
+      lightbox.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+    </script>
+  </body>
 </html>

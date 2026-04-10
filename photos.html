@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Work</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <h1 class="logo">Eve VanMeter</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="photos.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="page">
+      <!-- GALLERY -->
+      <div class="page">
+        <div class="gallery">
+          <img src="images/IMG_4422.JPG" />
+          <img src="images/IMG_4423.JPG" />
+          <img src="images/IMG_4424.JPG" />
+          <img src="images/IMG_4425.JPG" />
+        </div>
+      <div class="text-box">
+        <h3>Birthday Shoot</h3>
+        <p>
+          I photographed my best friend’s birthday shoot with the goal of capturing her personality and confidence in a fun, celebratory way. I focused on natural movement, expressive poses, and authentic smiles to make the images feel lively and personal rather than overly staged. The session was about highlighting her individuality and marking a meaningful milestone through vibrant, joy-filled portraits. 
+
+        </p>
+      </v>
+    </div>
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <img id="lightbox-img" />
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      document.querySelectorAll(".gallery img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = img.src;
+        });
+      });
+
+      lightbox.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
